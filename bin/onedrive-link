@@ -15,7 +15,7 @@ function getUrlFromArguments() {
 }
 
 function printHelp() {
-  console.log("Usage: onelink <Original OneDrive Sharing URL>");
+  console.log("Usage: onedrive-link <Original OneDrive Sharing URL>");
 }
 
 function main() {

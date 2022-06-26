@@ -1,9 +1,9 @@
 {
-  "name": "onelink",
+  "name": "onedrive-link",
   "version": "1.0.0",
   "description": "Generate direct download links for OneDrive",
-  "main": "bin/onelink",
-  "bin": "bin/onelink",
+  "main": "bin/onedrive-link",
+  "bin": "bin/onedrive-link",
   "scripts": {
     "prettier": "npx prettier -w bin/**/*"
   },
