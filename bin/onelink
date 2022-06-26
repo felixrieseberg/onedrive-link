@@ -1,0 +1,49 @@
+#! /usr/bin/env node
+
+function isUrl(input) {
+  return input.startsWith("https://");
+}
+
+function getUrlFromArguments() {
+  for (const arg of process.argv) {
+    if (isUrl(arg)) {
+      return arg;
+    }
+  }
+
+  return null;
+}
+
+function printHelp() {
+  console.log("Usage: onelink <Original OneDrive Sharing URL>");
+}
+
+function main() {
+  const url = getUrlFromArguments();
+
+  if (process.argv.includes("--help") || process.argv.includes("-h")) {
+    printHelp();
+    process.exit(0);
+  }
+
+  if (!url) {
+    console.log(`Error: No URL provided.`);
+    printHelp();
+    process.exit(1);
+  }
+
+  let base64Url = Buffer.from(url)
+    .toString("base64")
+    .replace(/\//, "_")
+    .replace(/\+/, "-");
+
+  if (base64Url.endsWith("=")) {
+    base64Url = base64Url.slice(0, -1);
+  }
+
+  console.log(
+    `https://api.onedrive.com/v1.0/shares/u!${base64Url}/root/content`
+  );
+}
+
+main();

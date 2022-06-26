@@ -1,0 +1,33 @@
+{
+  "name": "onelink",
+  "version": "1.0.0",
+  "description": "Generate direct download links for OneDrive",
+  "main": "bin/onelink",
+  "bin": "bin/onelink",
+  "scripts": {
+    "prettier": "npx prettier -w bin/**/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felixrieseberg/oneline.git"
+  },
+  "keywords": [
+    "OneDrive"
+  ],
+  "prettier": {
+    "overrides": [
+      {
+        "files": "bin/**/*",
+        "options": {
+          "parser": "babel"
+        }
+      }
+    ]
+  },
+  "author": "Felix Rieseberg <felix@felixrieseberg.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/felixrieseberg/oneline/issues"
+  },
+  "homepage": "https://github.com/felixrieseberg/oneline#readme"
+}
